@@ -1,5 +1,6 @@
 import React from 'react';
-import { Image as ImageIcon, Menu } from 'lucide-react';
+import Image from 'next/image';
+import { Menu } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -7,8 +8,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
-              <ImageIcon className="w-6 h-6 text-white" />
+            <div className="relative w-10 h-10">
+              <Image 
+                src="https://image.alikhlas.icu/rUga/FAVICON_ORANGE_V2.svg" 
+                alt="RemoveBG Logo" 
+                fill 
+                className="object-contain"
+                unoptimized
+              />
             </div>
             <span className="text-2xl font-bold text-slate-900 tracking-tight">RemoveBG</span>
           </div>

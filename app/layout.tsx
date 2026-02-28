@@ -63,6 +63,11 @@ export const metadata: Metadata = {
   verification: {
     google: 'google-site-verification-id',
   },
+  icons: {
+    icon: 'https://image.alikhlas.icu/rUga/FAVICON_ORANGE_V2.svg',
+    shortcut: 'https://image.alikhlas.icu/rUga/FAVICON_ORANGE_V2.svg',
+    apple: 'https://image.alikhlas.icu/rUga/FAVICON_ORANGE_V2.svg',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

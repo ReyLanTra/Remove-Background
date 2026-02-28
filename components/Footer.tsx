@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Image as ImageIcon, Github, Twitter, Instagram, Youtube, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
@@ -32,8 +33,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
-                <ImageIcon className="w-6 h-6 text-white" />
+              <div className="relative w-10 h-10">
+                <Image 
+                  src="https://image.alikhlas.icu/rUga/FAVICON_ORANGE_V2.svg" 
+                  alt="RemoveBG Logo" 
+                  fill 
+                  className="object-contain"
+                  unoptimized
+                />
               </div>
               <span className="text-2xl font-bold text-slate-900 tracking-tight">RemoveBG</span>
             </div>
