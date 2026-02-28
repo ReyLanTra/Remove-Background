@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Menu, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Locale, locales } from '@/lib/i18n';
+import { Locale, locales } from '@/lib/locales';
 
 interface HeaderProps {
   lang: Locale;

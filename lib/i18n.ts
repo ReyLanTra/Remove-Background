@@ -1,6 +1,4 @@
-import 'server-only';
-
-export type Locale = 'id' | 'en' | 'es' | 'fr' | 'de' | 'ja' | 'zh' | 'ar' | 'pt' | 'ru' | 'it' | 'ko' | 'tr';
+import { Locale, locales, defaultLocale } from './locales';
 
 const dictionaries = {
   id: () => import('../dictionaries/id.json').then((module) => module.default),
@@ -23,5 +21,5 @@ export const getDictionary = async (locale: Locale) => {
   return dictionaries[locale] ? dictionaries[locale]() : dictionaries.en();
 };
 
-export const locales: Locale[] = ['id', 'en', 'es', 'fr', 'de', 'ja', 'zh', 'ar', 'pt', 'ru', 'it', 'ko', 'tr'];
-export const defaultLocale: Locale = 'id';
+export { locales, defaultLocale };
+export type { Locale };

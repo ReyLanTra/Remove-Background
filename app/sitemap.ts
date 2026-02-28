@@ -1,4 +1,4 @@
-import { locales } from '@/lib/i18n';
+import { locales } from '@/lib/locales';
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
