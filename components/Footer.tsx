@@ -2,10 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { Image as ImageIcon, Github, Twitter, Instagram, Youtube, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { Locale } from '@/lib/i18n';
 
 const socialLinks = [
   { icon: Youtube, href: 'https://youtube.com/@ReyLan_Ch', label: 'YouTube' },
-  { icon: Instagram, href: 'https://www.tiktok.com/@itz.reyyzzrr', label: 'TikTok' }, // Using Instagram icon for TikTok as Lucide doesn't have a dedicated one, or I can use a generic one
+  { icon: Instagram, href: 'https://www.tiktok.com/@itz.reyyzzrr', label: 'TikTok' },
   { icon: Instagram, href: 'https://www.instagram.com/itz.reyyzzrr', label: 'Instagram' },
   { icon: Github, href: 'https://github.com/ReyLanTra', label: 'Github' },
 ];
@@ -18,15 +19,20 @@ const services = [
   { name: 'Shorting URL', href: 'https://s.alikhlas.icu' },
 ];
 
-const legalLinks = [
-  { name: 'Terms of Service', href: '/Terms-Of-Service' },
-  { name: 'Terms of Use', href: '/Terms-Of-Use' },
-  { name: 'Privacy Policy', href: '/Privacy-Policy' },
-  { name: 'Report Security', href: '/Report-Security' },
-  { name: 'Privacy Choices', href: '/Privacy-Choices' },
-];
+interface FooterProps {
+  lang: Locale;
+  dict: any;
+}
 
-export default function Footer() {
+export default function Footer({ lang, dict }: FooterProps) {
+  const legalLinks = [
+    { name: 'Terms of Service', href: `/${lang}/Terms-Of-Service` },
+    { name: 'Terms of Use', href: `/${lang}/Terms-Of-Use` },
+    { name: 'Privacy Policy', href: `/${lang}/Privacy-Policy` },
+    { name: 'Report Security', href: `/${lang}/Report-Security` },
+    { name: 'Privacy Choices', href: `/${lang}/Privacy-Choices` },
+  ];
+
   return (
     <footer className="bg-white border-t border-slate-200 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +70,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-900 font-bold mb-6 uppercase text-xs tracking-widest">Layanan</h4>
+            <h4 className="text-slate-900 font-bold mb-6 uppercase text-xs tracking-widest">{dict.services}</h4>
             <ul className="space-y-4">
               {services.map((service, index) => (
                 <li key={index}>
@@ -83,7 +89,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-900 font-bold mb-6 uppercase text-xs tracking-widest">Legal</h4>
+            <h4 className="text-slate-900 font-bold mb-6 uppercase text-xs tracking-widest">{dict.legal}</h4>
             <ul className="space-y-4">
               {legalLinks.map((link, index) => (
                 <li key={index}>
@@ -98,11 +104,11 @@ export default function Footer() {
 
         <div className="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-400 text-sm">
-            © {new Date().getFullYear()} RemoveBG. Created with ❤️ for designers worldwide.
+            © {new Date().getFullYear()} RemoveBG. {dict.allRightsReserved}
           </p>
           <div className="flex gap-6 text-sm text-slate-400">
-            <Link href="/sitemap.xml" className="hover:text-slate-600 transition-colors">Sitemap</Link>
-            <a href="#" className="hover:text-slate-600 transition-colors">Cookies</a>
+            <Link href="/sitemap.xml" className="hover:text-slate-600 transition-colors">{dict.sitemap}</Link>
+            <a href="#" className="hover:text-slate-600 transition-colors">{dict.cookies}</a>
           </div>
         </div>
       </div>

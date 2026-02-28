@@ -1,4 +1,5 @@
 import LegalPage from '@/components/LegalPage';
+import { Locale } from '@/lib/i18n';
 
 const content = `
 # Privacy Policy
@@ -34,6 +35,7 @@ You have the right to:
 We may update this policy from time to time. We will notify you of any significant changes by posting the new policy on this page.
 `;
 
-export default function Page() {
-  return <LegalPage title="Privacy Policy" content={content} />;
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  return <LegalPage title="Privacy Policy" content={content} lang={lang} />;
 }

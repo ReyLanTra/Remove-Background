@@ -1,4 +1,5 @@
 import LegalPage from '@/components/LegalPage';
+import { Locale } from '@/lib/i18n';
 
 const content = `
 # Privacy Choices
@@ -26,6 +27,7 @@ Our website currently does not respond to "Do Not Track" signals from browsers, 
 For any privacy-related questions or requests, please reach out to our Data Protection Officer at **dpo@alikhlas.icu**.
 `;
 
-export default function Page() {
-  return <LegalPage title="Privacy Choices" content={content} />;
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  return <LegalPage title="Privacy Choices" content={content} lang={lang} />;
 }

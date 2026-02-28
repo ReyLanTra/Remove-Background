@@ -4,14 +4,18 @@ import ImageUploader from '@/components/ImageUploader';
 import Features from '@/components/Features';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
+import { getDictionary, Locale } from '@/lib/i18n';
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+
   // Structured Data for SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "RemoveBG",
-    "url": "https://remove.bg.alikhlas.icu/",
+    "url": `https://remove.bg.alikhlas.icu/${lang}`,
     "operatingSystem": "Web",
     "applicationCategory": "MultimediaApplication",
     "offers": {
@@ -19,7 +23,7 @@ export default function Home() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "Remove background from images automatically and for free with high quality using AI. Supports multiple languages.",
+    "description": dict.hero.description,
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -34,24 +38,24 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <Header />
-      <Hero />
+      <Header lang={lang} dict={dict.common} />
+      <Hero dict={dict.hero} />
       
       <div className="relative">
         <div id="uploader" className="scroll-mt-24">
-          <ImageUploader />
+          <ImageUploader dict={dict.uploader} />
         </div>
       </div>
 
       <div id="features" className="scroll-mt-24">
-        <Features />
+        <Features dict={dict.features} />
       </div>
 
       <div id="faq" className="scroll-mt-24">
-        <FAQ />
+        <FAQ dict={dict.faq} />
       </div>
 
-      <Footer />
+      <Footer lang={lang} dict={dict.common} />
     </main>
   );
 }

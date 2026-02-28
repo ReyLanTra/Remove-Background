@@ -1,0 +1,82 @@
+{
+  "common": {
+    "startFree": "Mulai Gratis",
+    "features": "Fitur",
+    "faq": "FAQ",
+    "removeBg": "Hapus Background",
+    "legal": "Legal",
+    "services": "Layanan",
+    "company": "Perusahaan",
+    "sitemap": "Sitemap",
+    "cookies": "Cookies",
+    "allRightsReserved": "Hak Cipta Dilindungi."
+  },
+  "hero": {
+    "badge": "Penghapusan Background Berbasis AI",
+    "title1": "Hapus Background Foto",
+    "title2": "Secara Otomatis & Gratis",
+    "description": "Hapus latar belakang dari gambar apa pun dalam hitungan detik. Cepat, presisi, dan 100% gratis untuk semua kebutuhan desain Anda.",
+    "ctaStart": "Mulai Sekarang",
+    "ctaFeatures": "Lihat Fitur"
+  },
+  "uploader": {
+    "title": "Unggah gambar Anda",
+    "description": "Tarik dan lepas gambar di sini, atau klik untuk memilih file (JPG, PNG, WebP)",
+    "original": "Asli",
+    "result": "Hasil",
+    "processing": "Memproses...",
+    "clickToStart": "Klik tombol di bawah untuk mulai",
+    "buttonRemove": "Hapus Background",
+    "buttonDownload": "Unduh Gambar",
+    "buttonUploadNew": "Unggah Baru",
+    "error": "Gagal menghapus background. Silakan coba lagi nanti."
+  },
+  "features": {
+    "title": "Mengapa Memilih RemoveBG?",
+    "subtitle": "Solusi terbaik untuk menghapus background foto dengan cepat, mudah, dan profesional.",
+    "items": [
+      {
+        "title": "100% Otomatis",
+        "description": "Teknologi AI kami mendeteksi subjek dan menghapus latar belakang secara instan tanpa perlu seleksi manual."
+      },
+      {
+        "title": "Kualitas Tinggi",
+        "description": "Hasil potongan yang halus dan presisi, menjaga detail rambut dan tepi objek dengan sangat baik."
+      },
+      {
+        "title": "Gratis Selamanya",
+        "description": "Gunakan tool ini sepuasnya tanpa biaya berlangganan atau biaya tersembunyi. Benar-benar gratis."
+      },
+      {
+        "title": "Cepat & Efisien",
+        "description": "Proses penghapusan background hanya memakan waktu beberapa detik saja. Hemat waktu berharga Anda."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "subtitle": "Segala hal yang perlu Anda ketahui tentang layanan kami.",
+    "items": [
+      {
+        "question": "Apakah RemoveBG benar-benar gratis?",
+        "answer": "Ya, RemoveBG sepenuhnya gratis untuk digunakan. Anda dapat mengunggah dan menghapus background foto sebanyak yang Anda inginkan tanpa biaya."
+      },
+      {
+        "question": "Format gambar apa saja yang didukung?",
+        "answer": "Kami mendukung format gambar populer seperti JPG, JPEG, PNG, dan WebP."
+      },
+      {
+        "question": "Apakah kualitas gambar akan berkurang?",
+        "answer": "Kami berusaha menjaga kualitas gambar asli semaksimal mungkin. Hasil akhir akan memiliki resolusi yang sama dengan gambar yang Anda unggah."
+      },
+      {
+        "question": "Bagaimana dengan privasi foto saya?",
+        "answer": "Keamanan Anda adalah prioritas kami. Foto yang Anda unggah hanya diproses untuk menghapus background dan tidak akan disimpan secara permanen di server kami."
+      },
+      {
+        "question": "Apakah saya perlu mendaftar akun?",
+        "answer": "Tidak perlu. Anda bisa langsung menggunakan layanan kami tanpa harus melakukan registrasi atau login."
+      }
+    ]
+  }
+}

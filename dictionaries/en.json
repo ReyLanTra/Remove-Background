@@ -1,0 +1,82 @@
+{
+  "common": {
+    "startFree": "Start Free",
+    "features": "Features",
+    "faq": "FAQ",
+    "removeBg": "Remove Background",
+    "legal": "Legal",
+    "services": "Services",
+    "company": "Company",
+    "sitemap": "Sitemap",
+    "cookies": "Cookies",
+    "allRightsReserved": "All Rights Reserved."
+  },
+  "hero": {
+    "badge": "AI-Powered Background Removal",
+    "title1": "Remove Image Background",
+    "title2": "Automatically & Free",
+    "description": "Remove the background from any image in seconds. Fast, precise, and 100% free for all your design needs worldwide.",
+    "ctaStart": "Start Now",
+    "ctaFeatures": "View Features"
+  },
+  "uploader": {
+    "title": "Upload your image",
+    "description": "Drag and drop an image here, or click to select a file (JPG, PNG, WebP)",
+    "original": "Original",
+    "result": "Result",
+    "processing": "Processing...",
+    "clickToStart": "Click the button below to start",
+    "buttonRemove": "Remove Background",
+    "buttonDownload": "Download Image",
+    "buttonUploadNew": "Upload New",
+    "error": "Failed to remove background. Please try again later."
+  },
+  "features": {
+    "title": "Why Choose RemoveBG?",
+    "subtitle": "The best solution to remove photo backgrounds quickly, easily, and professionally.",
+    "items": [
+      {
+        "title": "100% Automatic",
+        "description": "Our AI technology detects subjects and removes backgrounds instantly without manual selection."
+      },
+      {
+        "title": "High Quality",
+        "description": "Smooth and precise cutouts, preserving hair details and object edges exceptionally well."
+      },
+      {
+        "title": "Free Forever",
+        "description": "Use this tool as much as you want without subscription fees or hidden costs. Truly free."
+      },
+      {
+        "title": "Fast & Efficient",
+        "description": "The background removal process takes only a few seconds. Save your valuable time."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our service.",
+    "items": [
+      {
+        "question": "Is RemoveBG really free?",
+        "answer": "Yes, RemoveBG is completely free to use. You can upload and remove backgrounds as many times as you want at no cost."
+      },
+      {
+        "question": "What image formats are supported?",
+        "answer": "We support popular image formats such as JPG, JPEG, PNG, and WebP."
+      },
+      {
+        "question": "Will the image quality decrease?",
+        "answer": "We strive to maintain the original image quality as much as possible. The final result will have the same resolution as the image you uploaded."
+      },
+      {
+        "question": "What about the privacy of my photos?",
+        "answer": "Your security is our priority. The photos you upload are only processed to remove the background and will not be stored permanently on our servers."
+      },
+      {
+        "question": "Do I need to register an account?",
+        "answer": "No need. You can use our service directly without having to register or log in."
+      }
+    ]
+  }
+}

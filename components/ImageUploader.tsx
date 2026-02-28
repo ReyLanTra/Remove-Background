@@ -8,7 +8,11 @@ import axios from 'axios';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/lib/utils';
 
-export default function ImageUploader() {
+interface ImageUploaderProps {
+  dict: any;
+}
+
+export default function ImageUploader({ dict }: ImageUploaderProps) {
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [result, setResult] = useState<string | null>(null);
@@ -51,7 +55,7 @@ export default function ImageUploader() {
       setResult(url);
     } catch (err) {
       console.error('Error removing background:', err);
-      setError('Gagal menghapus background. Silakan coba lagi nanti.');
+      setError(dict.error);
     } finally {
       setIsLoading(false);
     }
@@ -68,7 +72,7 @@ export default function ImageUploader() {
     if (!result) return;
     const link = document.createElement('a');
     link.href = result;
-    link.download = `hapusbg-${Date.now()}.png`;
+    link.download = `removebg-${Date.now()}.png`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -92,10 +96,10 @@ export default function ImageUploader() {
                   <Upload className="w-8 h-8 text-indigo-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                  Unggah gambar Anda
+                  {dict.title}
                 </h3>
                 <p className="text-slate-500 max-w-xs mx-auto">
-                  Tarik dan lepas gambar di sini, atau klik untuk memilih file (JPG, PNG, WebP)
+                  {dict.description}
                 </p>
               </div>
             </div>
@@ -103,7 +107,7 @@ export default function ImageUploader() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">Asli</p>
+                  <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">{dict.original}</p>
                   <div className="relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
                     <Image 
                       src={preview} 
@@ -125,7 +129,7 @@ export default function ImageUploader() {
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">Hasil</p>
+                  <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">{dict.result}</p>
                   <div className="relative aspect-square rounded-xl overflow-hidden bg-[url('https://www.transparenttextures.com/patterns/checkerboard.png')] bg-slate-200 border border-slate-200 flex items-center justify-center">
                     {result ? (
                       <Image 
@@ -139,12 +143,12 @@ export default function ImageUploader() {
                     ) : isLoading ? (
                       <div className="flex flex-col items-center animate-pulse">
                         <Loader2 className="w-10 h-10 text-indigo-600 animate-spin mb-2" />
-                        <p className="text-indigo-600 font-medium">Memproses...</p>
+                        <p className="text-indigo-600 font-medium">{dict.processing}</p>
                       </div>
                     ) : (
                       <div className="text-slate-400 flex flex-col items-center">
                         <ImageIcon className="w-12 h-12 mb-2 opacity-20" />
-                        <p className="text-sm">Klik tombol di bawah untuk mulai</p>
+                        <p className="text-sm">{dict.clickToStart}</p>
                       </div>
                     )}
                   </div>
@@ -157,7 +161,7 @@ export default function ImageUploader() {
                     onClick={handleRemoveBackground}
                     className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition-all active:scale-95"
                   >
-                    Hapus Background
+                    {dict.buttonRemove}
                   </button>
                 )}
 
@@ -168,13 +172,13 @@ export default function ImageUploader() {
                       className="w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white rounded-xl font-semibold shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 active:scale-95"
                     >
                       <Download className="w-5 h-5" />
-                      Unduh Gambar
+                      {dict.buttonDownload}
                     </button>
                     <button
                       onClick={reset}
                       className="w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-600 rounded-xl font-semibold hover:bg-slate-200 transition-all active:scale-95"
                     >
-                      Unggah Baru
+                      {dict.buttonUploadNew}
                     </button>
                   </>
                 )}

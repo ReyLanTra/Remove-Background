@@ -1,4 +1,5 @@
 import LegalPage from '@/components/LegalPage';
+import { Locale } from '@/lib/i18n';
 
 const content = `
 # Terms of Use
@@ -29,6 +30,7 @@ The service is provided without any warranties, express or implied. We do not gu
 These terms shall be governed by and construed in accordance with the laws of Indonesia.
 `;
 
-export default function Page() {
-  return <LegalPage title="Terms of Use" content={content} />;
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  return <LegalPage title="Terms of Use" content={content} lang={lang} />;
 }

@@ -1,4 +1,5 @@
 import LegalPage from '@/components/LegalPage';
+import { Locale } from '@/lib/i18n';
 
 const content = `
 # Report Security
@@ -29,6 +30,7 @@ We will:
 At this time, we do not have a formal bug bounty program, but we greatly appreciate and acknowledge the contributions of security researchers.
 `;
 
-export default function Page() {
-  return <LegalPage title="Report Security" content={content} />;
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  return <LegalPage title="Report Security" content={content} lang={lang} />;
 }

@@ -4,7 +4,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Image as ImageIcon, Sparkles } from 'lucide-react';
 
-export default function Hero() {
+interface HeroProps {
+  dict: any;
+}
+
+export default function Hero({ dict }: HeroProps) {
   return (
     <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       {/* Background Accents */}
@@ -21,19 +25,18 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-sm font-medium mb-8">
             <Sparkles className="w-4 h-4" />
-            <span>AI-Powered Background Removal</span>
+            <span>{dict.badge}</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6">
-            Remove Image Background <br />
+            {dict.title1} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-emerald-600">
-              Automatically & Free
+              {dict.title2}
             </span>
           </h1>
           
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Remove the background from any image in seconds. 
-            Fast, precise, and 100% free for all your design needs worldwide.
+            {dict.description}
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -41,13 +44,13 @@ export default function Hero() {
               href="#uploader"
               className="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all active:scale-95"
             >
-              Mulai Sekarang
+              {dict.ctaStart}
             </a>
             <a 
               href="#features"
               className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all active:scale-95"
             >
-              Lihat Fitur
+              {dict.ctaFeatures}
             </a>
           </div>
         </motion.div>

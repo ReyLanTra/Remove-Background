@@ -1,4 +1,5 @@
 import LegalPage from '@/components/LegalPage';
+import { Locale } from '@/lib/i18n';
 
 const content = `
 # Terms of Service
@@ -32,6 +33,7 @@ We reserve the right to modify these terms at any time. Continued use of the ser
 If you have any questions about these Terms, please contact us at support@alikhlas.icu.
 `;
 
-export default function Page() {
-  return <LegalPage title="Terms of Service" content={content} />;
+export default async function Page({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params;
+  return <LegalPage title="Terms of Service" content={content} lang={lang} />;
 }

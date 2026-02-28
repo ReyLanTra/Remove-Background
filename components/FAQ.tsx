@@ -4,44 +4,25 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
-const faqs = [
-  {
-    question: "Apakah HapusBG benar-benar gratis?",
-    answer: "Ya, HapusBG sepenuhnya gratis untuk digunakan. Anda dapat mengunggah dan menghapus background foto sebanyak yang Anda inginkan tanpa biaya."
-  },
-  {
-    question: "Format gambar apa saja yang didukung?",
-    answer: "Kami mendukung format gambar populer seperti JPG, JPEG, PNG, dan WebP."
-  },
-  {
-    question: "Apakah kualitas gambar akan berkurang?",
-    answer: "Kami berusaha menjaga kualitas gambar asli semaksimal mungkin. Hasil akhir akan memiliki resolusi yang sama dengan gambar yang Anda unggah."
-  },
-  {
-    question: "Bagaimana dengan privasi foto saya?",
-    answer: "Keamanan Anda adalah prioritas kami. Foto yang Anda unggah hanya diproses untuk menghapus background dan tidak akan disimpan secara permanen di server kami."
-  },
-  {
-    question: "Apakah saya perlu mendaftar akun?",
-    answer: "Tidak perlu. Anda bisa langsung menggunakan layanan kami tanpa harus melakukan registrasi atau login."
-  }
-];
+interface FAQProps {
+  dict: any;
+}
 
-export default function FAQ() {
+export default function FAQ({ dict }: FAQProps) {
   return (
     <section className="py-24 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Pertanyaan yang Sering Diajukan
+            {dict.title}
           </h2>
           <p className="text-lg text-slate-600">
-            Segala hal yang perlu Anda ketahui tentang layanan kami.
+            {dict.subtitle}
           </p>
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {dict.items.map((faq: any, index: number) => (
             <details
               key={index}
               className="group bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all hover:border-indigo-200"

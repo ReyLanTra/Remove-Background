@@ -2,16 +2,20 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { getDictionary, Locale } from '@/lib/i18n';
 
 interface LegalPageProps {
   title: string;
   content: string;
+  lang: Locale;
 }
 
-export default function LegalPage({ title, content }: LegalPageProps) {
+export default async function LegalPage({ title, content, lang }: LegalPageProps) {
+  const dict = await getDictionary(lang);
+
   return (
     <main className="min-h-screen bg-slate-50">
-      <Header />
+      <Header lang={lang} dict={dict.common} />
       <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
           <div className="p-8 md:p-12">
@@ -22,7 +26,7 @@ export default function LegalPage({ title, content }: LegalPageProps) {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer lang={lang} dict={dict.common} />
     </main>
   );
 }
